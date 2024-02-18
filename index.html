@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,12 +15,22 @@
             <div class="calculator_body">
                 <div class="screen"></div>
                 <div class="pad">
+                    <!-- add numbers with JS -->
                     <div class="num_pad"></div>
-                    <div class="function_pad"></div>
+                    <div class="function_pad">
+                        <div class="function_buttons">
+                            <div class="add calcButton"></div>
+                            <div class="subtract calcButton"></div>
+                            <div class="divide calcButton"></div>
+                            <div class="multiply calcButton"></div>
+                        </div>
+                        <div class="equal_button"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer"></div>
+    <script src="script.js"></script>
 </body>
 </html>
