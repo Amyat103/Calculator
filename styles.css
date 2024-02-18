@@ -1,0 +1,47 @@
+body {
+    margin: 0px
+}
+
+.head {
+    background-color: grey;
+    display: flex;
+    height: 15vh;
+}
+
+.body {
+    background-color: beige;
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator_div {
+    background-color: black;
+    display: flex;
+    height: 500px;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.calculator_body {
+    background-color: grey;
+    height: 97%;
+    width: 97%;
+    border-radius: 20px;
+}
+
+.screen {
+    background-color: beige;
+    height: 30%;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.footer {
+    background-color: grey;
+    display: flex;
+    height: 5vh;
+}
