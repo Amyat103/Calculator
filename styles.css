@@ -19,11 +19,12 @@ body {
 .calculator_div {
     background-color: black;
     display: flex;
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 400px;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 
 .calculator_body {
@@ -33,6 +34,7 @@ body {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .screen {
@@ -47,6 +49,7 @@ body {
     flex-grow: 8;
     padding: 10px;
     display: flex;
+    box-sizing: border-box;
 }
 
 .num_pad,
@@ -62,31 +65,48 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    box-sizing: border-box;
 }
 
 .function_buttons {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 8;
+    flex-direction: row;
+    box-sizing: border-box;
 }
 
 .function_buttons > div,
 .equal_button {
     background-color: beige;
+    box-sizing: border-box;
 }
 
 .function_buttons > div {
-    flex: 1 1 50%;
-    min-width: 10px;
+    flex: 1 1 30%;
+    min-width: 5px;
     border-radius: 10px;
-    /* box-sizing: border-box;
-    margin: 10px; */
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin: 3px;
+    overflow: hidden;
+    /* max-width: 73px;
+    max-height: 145px; */
+    box-sizing: border-box;
 }
 
 .equal_button {
     flex-grow: 2;
     border-radius: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
 }
 
 .calcButton {
