@@ -38,11 +38,25 @@ body {
 }
 
 .screen {
+    box-sizing: border-box; 
+    display: flex;
     background-color: beige;
     /* height: 30%; */
     margin: 10px;
     border-radius: 20px;
-    flex-grow: 4;
+    flex: 4 0 0;
+    max-height: 162px;
+    max-width: 388px;
+    align-items: flex-end;
+    justify-content: right;
+    /* gap: 10px; */
+}
+
+.screen > div {
+    box-sizing: border-box;
+    overflow: auto;
+    margin: 10px;
+    font-size: 50px;
 }
 
 .pad {
