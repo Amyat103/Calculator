@@ -50,6 +50,7 @@ body {
     padding: 10px;
     display: flex;
     box-sizing: border-box;
+    gap: 5px;
 }
 
 .num_pad,
@@ -58,11 +59,23 @@ body {
 }
 
 .num_pad {
-    flex-grow: 2;
+    flex-grow: 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.num_pad > button {
+    flex: 1 0 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+    border-radius: 15px;
 }
 
 .function_pad {
-    flex-grow: 1;
+    flex-grow: 5;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -74,15 +87,16 @@ body {
     flex-grow: 8;
     flex-direction: row;
     box-sizing: border-box;
+    gap: 7px;
 }
 
-.function_buttons > div,
+.function_buttons > button,
 .equal_button {
     background-color: beige;
     box-sizing: border-box;
 }
 
-.function_buttons > div {
+.function_buttons > button {
     flex: 1 1 30%;
     min-width: 5px;
     border-radius: 10px;
@@ -91,7 +105,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    margin: 3px;
+    /* margin: 3px; */
     overflow: hidden;
     /* max-width: 73px;
     max-height: 145px; */
@@ -101,7 +115,7 @@ body {
 .equal_button {
     flex-grow: 2;
     border-radius: 10px;
-    margin: 5px;
+    margin-top: 5px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
