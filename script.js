@@ -1,6 +1,8 @@
 const numPad = document.querySelector(".num_pad");
 const screen = document.querySelector(".screen");
 
+
+const equalButton = document.querySelector("#equal");
 let input = "";
 
 // load the numbers buttons
@@ -11,26 +13,41 @@ window.onload = function () {
         eachNum.setAttribute("value", i);
         eachNum.setAttribute("class", "button");
         numPad.append(eachNum);
-        // eachNum.addEventListener("click" () {
-        //     input += this.value;
-        // })
     }
     const zeroNum = document.createElement("button");
     zeroNum.textContent = 0;
-    zeroNum.setAttribute("value", "10");
+    zeroNum.setAttribute("value", "0");
     zeroNum.setAttribute("class", "button");
     numPad.append(zeroNum);
+
+    ButtonEvents();
 }
 
 
-const buttons = document.querySelectorAll(".button");
+function ButtonEvents () {
+    // need it here so there is a "buttons"
+    const buttons = document.querySelectorAll(".button");
 
-buttons.forEach(function(button) {
-    button.addEventListener("click", something)
-});
+    buttons.forEach(function(button) {
+        button.addEventListener("click", () => {
+            if (button.value === "equal") {
+                canculate();
+            }
+            input += button.value;
+            console.log(button.value + "stored");
+    
+            const eachClick = document.createElement("div");
+            eachClick.textContent = button.value;
+            screen.append(eachClick);
+        })
+    });
+}
+
+
+
 
 function calculate() {
-
+    console.log(input);
 }
 
 
