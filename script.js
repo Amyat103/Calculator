@@ -4,6 +4,7 @@ const screen = document.querySelector(".screen");
 
 const equalButton = document.querySelector("#equal");
 let input = "";
+let ans;
 
 // load the numbers buttons
 window.onload = function () {
@@ -32,6 +33,10 @@ function ButtonEvents () {
         button.addEventListener("click", () => {
             if (button.value === "equal") {
                 calculate();
+                eraseScreen();
+                const answer = document.createElement("div");
+                answer.textContent = ans;
+                screen.append(answer);
             }
             input += button.value;
             console.log(button.value);
@@ -43,21 +48,35 @@ function ButtonEvents () {
     });
 }
 
-
+function eraseScreen() {
+    while(screen.firstChild) screen.removeChild(scree.firstChild);
+}
 
 
 function calculate() {
     console.log(input);
     let beforeNum = input.split(/\D/);
     let operator = input.split(/\D/g);
-    let firstNum = beforeNum[0];
-    let secondNum = beforeNum[1];
-    let ans;
+    let firstNum = +beforeNum[0];
+    let secondNum = +beforeNum[1];
     console.log(beforeNum);
     console.log(firstNum);
     console.log(secondNum);
     console.log(operator);
-    // console.log(numbers);
+    switch (operator) {
+        case "+":
+            ans = firstNum + secondNum;
+            break;
+        case "-":
+            ans = firstNum - secondNum;
+            break;
+        case "x":
+            ans = firstNum * secondNum;
+            break;
+        case "/":
+            ans = firstNum / secondNum;
+            break;
+    }
 }
 
 
