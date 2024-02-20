@@ -54,11 +54,8 @@ function ButtonEvents () {
                 screen.append(eachClick);
             }
             if (button.value === "del") {
-                screen.removeChild(screen.lastChild);
-                screen.removeChild(screen.lastChild);
-                input = input.slice(0, -1);
+                del();
             }
-            
         })
     });
 }
@@ -67,6 +64,19 @@ function eraseScreen() {
     while(screen.firstChild) {
         screen.removeChild(screen.firstChild);
     }
+}
+
+function del() {
+    if (input.length > 0) {
+        input = input.slice(0, -4);
+        screen.removeChild(screen.lastChild);
+        console.log("removed")
+        if (screen.lastChild) {
+            screen.removeChild(screen.lastChild);
+            console.log("removed")
+        }
+    }
+    
 }
 
 
