@@ -31,10 +31,10 @@ function ButtonEvents () {
     buttons.forEach(function(button) {
         button.addEventListener("click", () => {
             if (button.value === "equal") {
-                canculate();
+                calculate();
             }
             input += button.value;
-            console.log(button.value + "stored");
+            console.log(button.value);
     
             const eachClick = document.createElement("div");
             eachClick.textContent = button.value;
@@ -48,6 +48,16 @@ function ButtonEvents () {
 
 function calculate() {
     console.log(input);
+    let beforeNum = input.split(/\D/);
+    let operator = input.split(/\D/g);
+    let firstNum = beforeNum[0];
+    let secondNum = beforeNum[1];
+    let ans;
+    console.log(beforeNum);
+    console.log(firstNum);
+    console.log(secondNum);
+    console.log(operator);
+    // console.log(numbers);
 }
 
 
