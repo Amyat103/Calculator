@@ -5,6 +5,7 @@ const screen = document.querySelector(".screen");
 const equalButton = document.querySelector("#equal");
 let input = "";
 let ans;
+let calculated = false;
 
 // load the numbers buttons
 window.onload = function () {
@@ -31,39 +32,50 @@ function ButtonEvents () {
 
     buttons.forEach(function(button) {
         button.addEventListener("click", () => {
-            if (button.value === "equal") {
+            if (calculated === true) {
+                eraseScreen();
+                calculated = false;
+            }
+            if (button.value === "=") {
                 calculate();
                 eraseScreen();
                 const answer = document.createElement("div");
                 answer.textContent = ans;
                 screen.append(answer);
+                input = "";
+                ans = 0;
+                calculated = true;
+            } else {
+                input += button.value;
+                console.log(button.value);
+        
+                const eachClick = document.createElement("div");
+                eachClick.textContent = button.value;
+                screen.append(eachClick);
             }
-            input += button.value;
-            console.log(button.value);
-    
-            const eachClick = document.createElement("div");
-            eachClick.textContent = button.value;
-            screen.append(eachClick);
+            
         })
     });
 }
 
 function eraseScreen() {
-    while(screen.firstChild) screen.removeChild(scree.firstChild);
+    while(screen.firstChild) {
+        screen.removeChild(screen.firstChild);
+    }
 }
 
 
 function calculate() {
     console.log(input);
     let beforeNum = input.split(/\D/);
-    let operator = input.split(/\D/g);
+    let operator = input.match(/\D/g);
     let firstNum = +beforeNum[0];
     let secondNum = +beforeNum[1];
     console.log(beforeNum);
     console.log(firstNum);
     console.log(secondNum);
     console.log(operator);
-    switch (operator) {
+    switch (operator[0]) {
         case "+":
             ans = firstNum + secondNum;
             break;
@@ -74,6 +86,10 @@ function calculate() {
             ans = firstNum * secondNum;
             break;
         case "/":
+            if (firstNum === 0 || secondNum === 0) {
+                ans = 0;
+                break;
+            }
             ans = firstNum / secondNum;
             break;
     }
