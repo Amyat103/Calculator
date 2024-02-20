@@ -2,6 +2,10 @@ body {
     margin: 0px
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .head {
     background-color: grey;
     display: flex;
@@ -24,26 +28,27 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    box-sizing: border-box;
+}
+
+.calculator_div * {
+    border-radius: 25px;
 }
 
 .calculator_body {
     background-color: grey;
     height: 97%;
     width: 97%;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
 }
 
 .screen {
-    box-sizing: border-box; 
     display: flex;
     background-color: beige;
     /* height: 30%; */
     margin: 10px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     flex: 4 0 0;
     max-height: 162px;
     max-width: 388px;
@@ -53,7 +58,6 @@ body {
 }
 
 .screen > div {
-    box-sizing: border-box;
     overflow: auto;
     margin: 10px;
     font-size: 50px;
@@ -63,13 +67,7 @@ body {
     flex-grow: 8;
     padding: 10px;
     display: flex;
-    box-sizing: border-box;
     gap: 5px;
-}
-
-.num_pad,
-.function_pad {
-
 }
 
 .num_pad {
@@ -85,14 +83,13 @@ body {
     justify-content: center;
     align-items: center;
     background-color: beige;
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 .function_pad {
     flex-grow: 5;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
 }
 
 .function_buttons {
@@ -100,20 +97,18 @@ body {
     flex-wrap: wrap;
     flex-grow: 8;
     flex-direction: row;
-    box-sizing: border-box;
     gap: 7px;
 }
 
 .function_buttons > button,
 .equal_button {
     background-color: beige;
-    box-sizing: border-box;
 }
 
 .function_buttons > button {
     flex: 1 1 30%;
     min-width: 5px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
@@ -123,23 +118,34 @@ body {
     overflow: hidden;
     /* max-width: 73px;
     max-height: 145px; */
-    box-sizing: border-box;
 }
+
+.pad.button {
+    border: none;
+    box-shadow: 0 20px grey;
+}
+
+.pad.button:active {
+    background-color: green;
+    box-shadow: 0 5px grey;
+    transform: translateY(4px);
+}
+
 
 #del,
 #equal {
     background-color: beige;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-size: 20px;
+    /* border-radius: 10px; */
 }
 
 #del {
-    flex-grow: 2;
+    font-size: 15px;
+    flex-grow: 1;
     margin-bottom: 5px;
 }
 
 #equal {
+    font-size: 25px;
     flex-grow: 2.5;
     margin-top: 5px;
     display: flex;
