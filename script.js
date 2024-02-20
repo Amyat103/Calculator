@@ -53,6 +53,11 @@ function ButtonEvents () {
                 eachClick.textContent = button.value;
                 screen.append(eachClick);
             }
+            if (button.value === "del") {
+                screen.removeChild(screen.lastChild);
+                screen.removeChild(screen.lastChild);
+                input = input.slice(0, -1);
+            }
             
         })
     });
