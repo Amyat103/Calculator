@@ -153,8 +153,11 @@ body {
     transform: translateY(4px);
 }
 
+#del {
+    background-color: #FA8072;
+}
 
-#del,
+
 #equal {
     background-color: #E1F2FE;
     /* border-radius: 10px; */
