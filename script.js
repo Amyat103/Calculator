@@ -46,6 +46,7 @@ function ButtonEvents () {
                 answer.textContent = ans;
                 screen.append(answer);
                 input = "";
+                eachHistory = "";
                 ans = 0;
                 calculated = true;
             } else {
@@ -97,28 +98,23 @@ function calculate() {
         case "+":
             ans = firstNum + secondNum;
             eachHistory += firstNum + operator + secondNum + " = " + ans;
-            input = "";
             break;
         case "-":
             ans = firstNum - secondNum;
             eachHistory += firstNum + operator + secondNum + " = " + ans;
-            input = "";
             break;
         case "x":
             ans = firstNum * secondNum;
             eachHistory += firstNum + operator + secondNum + " = " + ans;
-            input = "";
             break;
         case "/":
             if (firstNum === 0 || secondNum === 0) {
                 ans = 0;
                 eachHistory += firstNum + operator + secondNum + " = " + ans;
-                input = "";
                 break;
             }
             ans = Math.round(((firstNum / secondNum) * 1000) / 1000);
             eachHistory += firstNum + operator + secondNum + " = " + ans;
-            input = "";
             break;
     }
 }
