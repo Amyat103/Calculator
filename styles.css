@@ -6,6 +6,7 @@ body {
 
 * {
     box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
 }
 
 ul {
@@ -27,7 +28,6 @@ a {
 }
 
 .head {
-    font-family: "Kanit", sans-serif;
     font-size: 25px;
     background-color: #95ADB6;
     display: flex;
@@ -43,7 +43,34 @@ a {
     display: flex;
     height: 80vh;
     align-items: center;
+    justify-content: space-evenly;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 60vh;
+    gap: 10px;
+}
+
+.instruction,
+.history {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(141, 161, 185, 0.6);
+    border-radius: 25px;
+    text-align: center;
+}
+
+.instruction {
+    flex: 0 0 40%;
+    align-items: center;
     justify-content: center;
+}
+
+.history {
+    flex: 0 0 60%;
 }
 
 .calculator_div {
@@ -87,7 +114,6 @@ a {
 .screen > div {
     overflow: auto;
     margin: 10px;
-    font-family: "Kanit", sans-serif;
     font-size: 50px;
     color: #49392C;
     box-sizing: border-box;
@@ -113,7 +139,6 @@ a {
     justify-content: center;
     align-items: center;
     background-color: #E1F2FE;
-    font-family: "Kanit", sans-serif;
     color: #49392C;
     box-sizing: border-box;
     font-size: 20px;
@@ -199,7 +224,6 @@ a {
     display: flex;
     height: 10vh;
     border-top: 1px solid grey;
-    font-family: "Kanit", sans-serif;
     font-size: 23px;
     background-color: #95ADB6;
     justify-content: center;
