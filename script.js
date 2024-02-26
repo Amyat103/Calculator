@@ -94,6 +94,11 @@ function calculate() {
     console.log(firstNum);
     console.log(secondNum);
     console.log(operator);
+    if (!input) {
+        return;
+    } else if (!operator) {
+        return;
+    }
     switch (operator[0]) {
         case "+":
             ans = firstNum + secondNum;
@@ -122,7 +127,8 @@ function calculate() {
 function addHistory() {
     const historyDiv = document.createElement("div");
     historyDiv.textContent = eachHistory;
-    if (history.childElementCount > 4) {
+    historyDiv.setAttribute("class", "eachHistoryDiv");
+    if (history.childElementCount > 7) {
         let elements = history.querySelectorAll("div");
         history.removeChild(elements[3]);
     }

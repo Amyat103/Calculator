@@ -61,10 +61,10 @@ a {
     background-color: rgb(141, 161, 185, 0.6);
     border-radius: 25px;
     text-align: center;
+    border: 1px solid grey;
 }
 
 .instruction {
-    flex: 0 0 40%;
     align-items: center;
     justify-content: center;
 }
