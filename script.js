@@ -94,32 +94,32 @@ function calculate() {
     console.log(firstNum);
     console.log(secondNum);
     console.log(operator);
-    if (!input) {
-        return;
-    } else if (!operator) {
-        return;
-    }
     switch (operator[0]) {
         case "+":
             ans = firstNum + secondNum;
-            eachHistory += firstNum + operator + secondNum + " = " + ans;
+            // eachHistory += firstNum + operator + secondNum + " = " + ans;
+            eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
             break;
         case "-":
             ans = firstNum - secondNum;
-            eachHistory += firstNum + operator + secondNum + " = " + ans;
+            // eachHistory += firstNum + operator + secondNum + " = " + ans;
+            eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
             break;
         case "x":
             ans = firstNum * secondNum;
-            eachHistory += firstNum + operator + secondNum + " = " + ans;
+            // eachHistory += firstNum + operator[0] + secondNum + " = " + ans;
+            eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
             break;
         case "/":
             if (firstNum === 0 || secondNum === 0) {
                 ans = 0;
-                eachHistory += firstNum + operator + secondNum + " = " + ans;
+                // eachHistory += firstNum + operator + secondNum + " = " + ans;
+                eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
                 break;
             }
             ans = Math.round(((firstNum / secondNum) * 1000) / 1000);
-            eachHistory += firstNum + operator + secondNum + " = " + ans;
+            // eachHistory += firstNum + operator + secondNum + " = " + ans;
+            eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
             break;
     }
 }
@@ -130,7 +130,7 @@ function addHistory() {
     historyDiv.setAttribute("class", "eachHistoryDiv");
     if (history.childElementCount > 7) {
         let elements = history.querySelectorAll("div");
-        history.removeChild(elements[3]);
+        history.removeChild(elements[6]);
     }
     history.insertBefore(historyDiv, history.children[1]);
 }
