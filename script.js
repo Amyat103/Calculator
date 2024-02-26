@@ -86,6 +86,10 @@ function del() {
 
 function calculate() {
     console.log(input);
+    input = input.replace(/\++/g, '+');
+    input = input.replace(/-+/g, '-');
+    input = input.replace(/\*+/g, '*');
+    input = input.replace(/\/+/g, '/');
     let beforeNum = input.split(/\D/);
     let operator = input.match(/\D/g);
     let firstNum = +beforeNum[0];
