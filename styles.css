@@ -71,6 +71,18 @@ a {
 
 .history {
     flex: 0 0 60%;
+    gap: 5px;
+}
+
+.history > h3 {
+    margin: 5px;
+}
+
+.history > div {
+    height: 30px;
+    max-height: 30px;
+    min-height: 30px;
+    border-bottom: 3px dotted grey;
 }
 
 .calculator_div {

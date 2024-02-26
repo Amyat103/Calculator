@@ -1,11 +1,13 @@
 const numPad = document.querySelector(".num_pad");
 const screen = document.querySelector(".screen");
+const history = document.querySelector(".history");
 
 
 const equalButton = document.querySelector("#equal");
 let input = "";
 let ans;
 let calculated = false;
+let eachHistory = "";
 
 // load the numbers buttons
 window.onload = function () {
@@ -39,6 +41,7 @@ function ButtonEvents () {
             if (button.value === "=") {
                 calculate();
                 eraseScreen();
+                addHistory();
                 const answer = document.createElement("div");
                 answer.textContent = ans;
                 screen.append(answer);
@@ -93,21 +96,41 @@ function calculate() {
     switch (operator[0]) {
         case "+":
             ans = firstNum + secondNum;
+            eachHistory += firstNum + operator + secondNum + " = " + ans;
+            input = "";
             break;
         case "-":
             ans = firstNum - secondNum;
+            eachHistory += firstNum + operator + secondNum + " = " + ans;
+            input = "";
             break;
         case "x":
             ans = firstNum * secondNum;
+            eachHistory += firstNum + operator + secondNum + " = " + ans;
+            input = "";
             break;
         case "/":
             if (firstNum === 0 || secondNum === 0) {
                 ans = 0;
+                eachHistory += firstNum + operator + secondNum + " = " + ans;
+                input = "";
                 break;
             }
-            ans = firstNum / secondNum;
+            ans = Math.round(((firstNum / secondNum) * 1000) / 1000);
+            eachHistory += firstNum + operator + secondNum + " = " + ans;
+            input = "";
             break;
     }
+}
+
+function addHistory() {
+    const historyDiv = document.createElement("div");
+    historyDiv.textContent = eachHistory;
+    if (history.childElementCount > 4) {
+        let elements = history.querySelectorAll("div");
+        history.removeChild(elements[3]);
+    }
+    history.insertBefore(historyDiv, history.children[1]);
 }
 
 
