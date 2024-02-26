@@ -107,23 +107,23 @@ function calculate() {
         case "-":
             ans = firstNum - secondNum;
             // eachHistory += firstNum + operator + secondNum + " = " + ans;
-            eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
+            eachHistory += `${firstNum} - ${secondNum} = ${ans}`;
             break;
         case "x":
             ans = firstNum * secondNum;
             // eachHistory += firstNum + operator[0] + secondNum + " = " + ans;
-            eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
+            eachHistory += `${firstNum} x ${secondNum} = ${ans}`;
             break;
         case "/":
             if (firstNum === 0 || secondNum === 0) {
-                ans = 0;
+                ans = "ERROR";
                 // eachHistory += firstNum + operator + secondNum + " = " + ans;
-                eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
+                eachHistory += `${firstNum} / ${secondNum} = ${ans}`;
                 break;
             }
-            ans = Math.round(((firstNum / secondNum) * 1000) / 1000);
+            ans = Number((firstNum / secondNum).toFixed(4));
             // eachHistory += firstNum + operator + secondNum + " = " + ans;
-            eachHistory += `${firstNum} + ${secondNum} = ${ans}`;
+            eachHistory += `${firstNum} / ${secondNum} = ${ans}`;
             break;
     }
 }
